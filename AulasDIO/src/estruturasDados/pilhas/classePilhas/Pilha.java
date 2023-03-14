@@ -1,4 +1,4 @@
-package estruturasDados.classePilhas;
+package estruturasDados.pilhas.classePilhas;
 
 public class Pilha {
 	
