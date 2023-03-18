@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Artur
- *
- */
-module Aulas {
-}
