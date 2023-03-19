@@ -33,8 +33,18 @@ public class Conceitos {
 		 * Destrutor: Auxilia a destrução do objeto; Em Java precisa do void finalize(){...};
 		 * Sobrecarga: Mudar a assinatura (nome + parâmetros) de acordo com a necessidade.
 		 * 
-		 * - Objeto
-		 * - Mensagem
+		 * - Objeto: É a representação de um conceito/entidade do mundo real, que pode ser física ou conceitual
+		 * e possui significado bem definido para um determinado softare. Para esse conceito, deve ser definido uma classe
+		 * e os objetos serão instancias de classes.
+		 * 
+		 * - Mensagem: É o processo de ativação de um método de um objeto. Ocorre quando uma requisição (chamada) a esse método
+		 * é realizada, assim disparando a execução de seu comportamento descrito por sua classe.
+		 * ou seja: Carro (Classe) carro (Variável) = new (Instanciando um objeto) Carro() (Construtor);
+		 * carro.<método>; é a chamada do método;
+		 * 
+		 * 
+		 * 
+		 * 
 		 */
 
 	}
