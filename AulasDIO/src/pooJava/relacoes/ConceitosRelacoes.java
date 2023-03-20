@@ -25,6 +25,35 @@ public class ConceitosRelacoes {
 	 * 
 	 * Sobrescrita: A mesma ação que PODE se comportar diferente.
 	 * 
+	 * ASSOCIAÇÃO:
+	 * Possibilita um relacionamento entre classes/objetos, no qual possam pedir ajuda a outras classes/objetos
+	 * e representar de forma completa o conceito ao qual se destinam.
+	 * Ou seja, as classes e objetos interagem entre si para atingir seus objetivos.
+	 * 
+	 * Tipos: 
+	 * -> Estrutural (Atributos): - Composição; - Agregação.
+	 * Composição: "Com Parte Todo". Ex: Pessoa e Endereço.
+	 * Ou seja, se a pessoa deixa de existir, o endereço deixa de existir.
+	 * class Pessoa{ Endereco endereco;}
+	 * Agregação: "Sem Parte Todo". Ex: Disciplina e Aluno.
+	 * Se a disciplina deixa de existir, o aluno não necessariamente deixa de existir, pois pode estar em outra disciplina.
+	 * class Disciplina{ Aluno aluno;}
+	 * 
+	 * -> Comportamental (Métodos): - Dependência.
+	 * Dependência: "Depende de ". Ex: Compra e Cupom.
+	 * Quando um método depende de uma entidade objeto.
+	 * class Compra{... finalizar (Cupom cupom, ...) ...}
+	 * 
+	 * INTERFACE:
+	 * Define um contrato que deve ser seguido pela classe que a implementa.
+	 * Quando uma classe implementa uma interface, ela se compromete a realizar todos os comportamentos
+	 * que a interface disponibiliza.
+	 * Normalmente os métodos na interface não possuem corpo, apenas assinatura.
+	 * 
+	 * interface A{ ...}
+	 * class B implements A{ ...}
+	 * 
+	 * 
 	 * 
 	 * 
 	 */
