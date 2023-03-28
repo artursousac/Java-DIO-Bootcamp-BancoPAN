@@ -51,7 +51,9 @@ public class Main {
 		devYuri.progredir();
 		System.out.println("Conteúdos Concluidos Yuri: "+devYuri.getConteudosConcluidos());
 		System.out.println("XP: "+devYuri.calcularTotalXp());
+		
 
 	}
+	
 
 }
