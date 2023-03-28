@@ -14,3 +14,58 @@ DDL: Utilizadas pelos DBA's (administradores do banco de dados) formada por Crea
 Rename | Truncate | Merge. O DBA irá definir os esquemas, statements e indexing. Irá definir quem irá ter acesso ao banco
 de dados.
 
+DML: Insert | Update; Delete | Merge. Para acesso/consumo de banco de dados.
+
+DCL: Grant | Revoke. Utilizado para DBA.
+
+DQL: Select. Clausula mais utilizada.
+
+Statement é o estado do banco de dados. Existe comando/instrução, reconhecido pelo BD e o retorno é o registro de dados.
+
+Cláusulas SQL é uma Função que acarreta em instrução e algumas são obrigatórias. Exemplo: Select * from table_name; Select
+é uma cláusula e quando utiliza "*" o From é outra cláusula e obrigatória.
+
+Cláusulas SQL: Select, From, Where, Order By, Group By, Having.
+Termos SQL: Identificador, Operador, Constante e Expressão.
+
+Tipos de Dados: 
+- Caracteres:
+Tamanho Fixo (char) - 255 bytes; Variável (varchar) - 65535 bytes.
+-Texts types:
+mediumtext - 16777215 bytes
+longtext - 4294967295 characters
+Tinytext - 255 bytes
+Text - 65535 bytes
+- Conjunto de caracteres
+Alfabeto, Português, Inglês... SHOW CHARACTER SET
+- Dados numéricos
+- Dados temporais
+
+Constraint:
+* NOT NULL
+* PK & SK - primary e foreign key: Primary key é definido durante o Create table.
+* DEFAULT (valor)
+* CHECK (domain) - Create domain D_num as integer; Check (D_num > 0 and D_num < 21).
+* DELETE (comportamento)
+* UNIQUE: definido durante o Create table
+
+SQL Queries:
+  Comportamento:
+    - Multiset - not set
+    - Duplicações (Redundâncias) é custoso e é melhor prevenir (por meio de constraints).
+    Select All salary from employee; Select distinct salary from employee;
+    - Mapping: select <lista de atributos> from <tabela> where <condição>
+    Select: Bdate, Address; From: Employee; Where: Fname='John' AND Minit = 'B' AND Lname = 'Smith';
+
+
+
+
+
+
+
+
+
+
+
+
+
