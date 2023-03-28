@@ -1,0 +1,16 @@
+SQL
+Linguagem para manipulação de dados e execução de operações utilizadas por DBAs, Devs, BI e DS.
+Serve para modificação de dados e estrutura, além de adicionar, remover ou atualizar linhas. Também
+é possível recuperação de um sobconjunto de info de BD.
+
+Classificações: 
+* DDL - Data Definition Language
+* DML - Data Manipulation Language
+* DCL - Data Control Language
+* DQL - Data Query Language
+São sublinguagens.
+
+DDL: Utilizadas pelos DBA's (administradores do banco de dados) formada por Create | Drop | Alter; Insert | Update | Delete;
+Rename | Truncate | Merge. O DBA irá definir os esquemas, statements e indexing. Irá definir quem irá ter acesso ao banco
+de dados.
+
