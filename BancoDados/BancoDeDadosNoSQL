@@ -1,0 +1,69 @@
+Tipos de banco NoSQL:
+Document Store - Key-Value Store; Wide-Column Store; Graph Store.
+
+* Grafos são compostos de nós (dados) e vértices (relacionamentos) e o banco de dados mais utilizado para este tipo é o
+Neo4j.
+Relacionamentos e labbels podem ter propriedades assim como os nós.
+
+Ex: MATCH(patrick:Client {name: "Patrick"}) ...;
+
+* Coluna/Familia de colunas é constituido por 3 informações, como as chaves da coluna, valor da coluna e timestamp.
+Cassandra é o mais utilizado para este tipo. Realiza-se consulta por meio da chave primária.
+Keyspace: agrupamento de familias de colunas (database)
+Column Family/table: agrupamento de colunas (table) -- Não aceita o valor "null", ou seja, não existirá referencia em tal linha.
+Row key: chave que representa uma linha de coluna (primary key)
+Column: representa um valor contendo: Name, Value e Timestamp.
+
+Colunas são individualizadas entre si, diferente do modelo relacional.
+
+* Chave-Valor armazena um conjunto de dados, seja simples ou complexo, identificados por um identificador exclusivo.
+Bom desempenho em aplicações em nuvem, porém com menor capacidade de busca.
+Usado em cache, sessão de usuário, carrinho de compras.
+Redis é o banco mais utilizado para este tipo de banco não relacional.
+Dados não são agrupados em coluna, são apenas em chave e valor.
+Com o comando EX pode escolher o tempo que a chave vai existir, expirando após isto.
+
+* Documento é dados e documentos autocontidos e auto descritivos. Permite redundância e incosistência. É livre de esquemas
+podendo utilizar JSON, XML e outros.
+O mais utilizado é o MongoDB.
+É código aberto com alta perfomance, além de ser schema-free e utiliza o json para armazenamento dos dados.
+Suporte a indices, auto-sharding (escalamento horizontal), map-reduce (processar grandes dados), gridFS (armazenamento de arquivos).
+Dados não podem depender de outros dados
+
+Document ==> Tupla/Registro
+Collection ==> Tabela
+Embedding/linking ==> Join (maneira de ter uma referencia de um documento a outro documento)
+MongoDB é utilizado com grande volume de dados e os dados não necessariamente estruturados.
+Não é aconselhado utilizar quando existe a necessidade de relacionamentos/joins, quando tem propriedades ACID e transações
+importantes.
+CURIOSIDADE: Entidades de pagamento não homologam sistemas cujos dados financeiros dos clientes não estejam em bancos de
+dados RELACIONAIS tradicionais.
+MongoDB não dá suporte a chaves estrangeiras.
+
+Mongo armazena os dados utilizando o BSON e não o JSON.
+
+BSON: É uma serialização codificada em binário de documentos semelhantes a JSON. Contém extenções que permitem a representação
+de tipos de dados que não fazem parte da especificação JSON. Por exemplo, BSON tem um tipo Date, ObjectID.
+
+Schema Design:
+- S.C Embedding é ter documentos autocontidos (dentro do próprio documento)
+- S.C Referência os Documentos com depência de outros documentos ou cllections
+-Embedding: Consulta informações em uma unica query e atualiza o registro em uma unica operação. Por outro lado, possui
+um limite máximo em um documento.
+-Referência: Documentos pequenos, não duplica informações e é usado quando os dados não são acessados em todas as consultas.
+Por outro lado, Duas ou mais queries ou utilização do lookup.
+
+Boas Práticas:
+- Evitar documentos muito grandes
+- Usar nome campos objetivos e curtos
+- Analisar as queries utilizando explain()
+- Atualizar apenas os campos alterados
+- Evitar negações em queries
+- Listas/Arrays dentro dos documentos não podem crescer sem limites.
+
+Escalabilidade vertical adiciona mais recurso na máquina, enquanto o horizontal adiciona mais máquinas no pool de
+recursos.
+
+
+
+
