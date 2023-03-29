@@ -14,7 +14,7 @@ DDL: Utilizadas pelos DBA's (administradores do banco de dados) formada por Crea
 Rename | Truncate | Merge. O DBA irá definir os esquemas, statements e indexing. Irá definir quem irá ter acesso ao banco
 de dados.
 
-DML: Insert | Update; Delete | Merge. Para acesso/consumo de banco de dados.
+DML: Insert | Update; Delete | Merge. Para acesso/consumo de banco de dados. Subconjunto do SQL.
 
 DCL: Grant | Revoke. Utilizado para DBA.
 
@@ -58,6 +58,9 @@ SQL Queries:
     Select: Bdate, Address; From: Employee; Where: Fname='John' AND Minit = 'B' AND Lname = 'Smith';
     - Operadores:
     =, <, <=, >, >= e <>; +, -, *, /; AND, OR, XOR, NOT, TRUE, FALSE;
+    - Insert into <table> (<list-attributes>) values (<list-values>);
+    - Valores das PK pode ser por smallint unsigned, int ou bigint.
+    
     
 
 
