@@ -56,6 +56,9 @@ SQL Queries:
     Select All salary from employee; Select distinct salary from employee;
     - Mapping: select <lista de atributos> from <tabela> where <condição>
     Select: Bdate, Address; From: Employee; Where: Fname='John' AND Minit = 'B' AND Lname = 'Smith';
+    - Operadores:
+    =, <, <=, >, >= e <>; +, -, *, /; AND, OR, XOR, NOT, TRUE, FALSE;
+    
 
 
 
