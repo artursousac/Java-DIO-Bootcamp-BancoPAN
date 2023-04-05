@@ -1,0 +1,79 @@
+# PROTOCOLO HTTP.
+
+- Definido pelos RFCs 1945 e 2116;
+- Protocolo de comunicação
+- Browser -> Implementa o cliente HTTP
+- Servidor -> Host objetos web
+* Cliente: Mensagens - Request HTTP (Objetos web)
+* Servidor: Mensagens - Response HTTP (Protocolo TCP); Pacote pode ser recuperado quando perdido no TCP.
+Esta é a arquitetura Client-Server;
+É stateless, não guarda estado da outra "ponta".
+Tipos de arquivos/formatos/modelo utilizados é o XML e o JSON. O Body.
+Armazenamento, Transmissão e Reconstrução.
+Content-Type: application/sjon
+Accept: application/json
+Objetivos do XML é a Serialization; Comunicação e Metadados.
+Objetivos do JSON é a Lightweight; Independente de linguagem e Simples. Herda linguagem do JS.
+XML e JSON são auto-descritivos, hierárquicos, independentes de linguagem de programação e vasta utilização.
+JSON é sucinto, legível, fácil de entender; XML é mais complexo, porém foi utilizado por muito tempo.
+TCP é um protocolo de transmissão
+Transmissão é em 3 vias (SYN, SYN ACK, ACK). Comunicação persistente (Mantém ativa) e não-persistente (Encerra aplicação assim que recebe).
+
+** REQUEST E RESPONSE
+- HTTP Request: Request Line, HeadLine, Método HTTP com a Versão, URL que é o Host, Conexão é do tipo close, User-Agent
+é o agente que está realizando a aplicação (Mozila exemplo), accept-language é a linguagem e de preferencia do cliente.
+- Métodos mais utilizados GET e Post.
+- GET: /HTTP/1.1 - Host: localhost:8080 - Connection: close - User-agent: Mozilla/5.0 (linux;...) Firefox 51.0 - 
+Accept: text/html, application/xhtml+xml,...,*/*; q = 0.8 - Accept-language: en-US, en = 0.5 - Accept-enconding: gzip, deflate
+- GET solicita um recurso do servidor; POST submete uma entidade a um recurso.
+- Método seguro é considerado quando não há modificação expressa por ordem do cliente.
+
+- HTTP Response: Status Line com a Header Lines, Entity body. Status line possui a versão do protocolo (HTTP/1.1 200 OK)
+Existem vários status code. Classificação do status code é do 100-199 (Information response), 
+200-299 (Successful response), 300-399 (Redirection response), 400-499 (Client error), 500-599 (Server error)
+- WebDav criação de conj. de documentos, copy e move, link pages.
+- Mensagens HTTP - Response possuem dados da mensagem, como data, servidor, além de os content-type (tipo de dados)
+Existem os campos Header e Body.
+
+** PARA QUE SERVEM OS COOKIES E CACHE
+- HTTP é stateless e possui o modelo client/server, não guarda configurações do cliente. Os cookies rastreiam as informações
+do cliente. São pequenos blocos de dados criados e utilizados pelo servidor para persistir dados no dispositivo do cliente.
+- Os cookies estão nos Header File.
+- Existem cookies de sessão (apagados da memória) e persistentes (mantém o cookie mesmo após o fim da conexão).
+- Web Cache é um servidor intermediário, um proxy server. Ou seja, cliente envia mensagem fazendo requisição ao proxy
+o proxy recebe a mensagem e faz um searching no seu HD/Cache e verifica se tem as informações e, caso sim, envia para o cliente.
+Caso não possua, ele entra no HTTP Server. Cliente -> Proxy (Servidor), porém Proxy (Cliente) -> Server.
+- Com o proxy há uma redução de tráfego, tempo de resposta e de banda.
+
+** PROTOCOLO HTTP 2.0
+- No HTTP 1.1 possui algumas falhas como a repetição de dados, HOL (Head of Line Blocking), com foco no CSS/js e gzip, além do caching;
+- HOL é quando faz requisição e bloqueia estado do cliente, não podendo fazer outra enquanto não estiver resposta de volta.
+- No HTTP 2.0 possui uma multiplexação. É utilizado stream distintos, conseguindo uma comunicação mais eficiente.
+- Também, há uma priorização de recursos, utilizando pesos com uma relevância estabelecida.
+- No HTTP 2.0 possui Streaming ID header e o Streaming ID data. Pode ocorrer reutilização do Header.
+- HTTP 2.0 - Push: Envia tudo que o cliente precisa sem precisar que o cliente faça vários GET.
+Ou seja: GET main.html (stream 1) e o Server manda o RESPONSE main.html, além do PUSH main.js e PUSH img.jpg, exemplo.
+O Push precisa ser habilitado e configurado no cliente, pois não é Default.
+- HTTP 2.0 possui uma única conexão persistente, compressão de header, server push, https por padrão - TLS e negociação
+no handshake.
+- Contras é se o PUSH tiver uma configuração incorreta, além do Mixe 1.1 e 2.0 podendo ocorrer uma lentidão e Load Balance
+só suporta o HTTP 1.1.
+
+** SERVIDORES/SISTEMAS DE APLICAÇÃO
+- Apache, NGINX e XAMPP são servidores utilizados.
+- Apache é utilizado desde 1995, contribuição com o WWW, Opensource e Free, além de ter a Apache Software Foundation.
+Também, é Modular, dinâmico e carrefável, MPMs, Altamente escalável (+10000 conexões simultâneas de modo fácil), lida
+com arquivos estáticos, index, autoindex, tem a parte de segurança TLS/SSL via OpenSSL ou WolfSSL. Apache tem tanto para
+windows, como para linux, mas é mais utilizado no linux.
+- XAMPP utiliza o Apache Server. Interpretadores script - PHP/Perl. Este server é utilizado para Teste e Desenvolvimento
+de modo Offline.
+- Nginx é web server, proxy reverso, load balancer, mail proxy e http cache.
+
+
+
+
+
+
+
+
+
