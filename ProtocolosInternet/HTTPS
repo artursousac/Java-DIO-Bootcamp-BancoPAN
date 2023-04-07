@@ -1,0 +1,25 @@
+## HTTPS
+
+* CONCEITOS BÁSICOS
+
+- Criptografia por chave é para mapear o texto legível em ilegível e só consegue acessar o texto por meio da chave.
+- A chave Assimétrica existe duas opções, chave privada e pública, onde a chave privada é por meio de uma assinatura - criptografia
+e a chave pública é uma verificação de autenticidade. Já a chave Simétrica é uma única chave privada onde ambas as partes
+precisam ter conhecimento da chave. Na chave simétrica funciona por meio de uma rotacionação da letra pela k-ésima parte da letra definida anteriormente.
+Também é possível utilizar a chave simétrica por meio de cifras com bits, que ocorre por permutação do "k". Normalmente
+o "k" é maior que 64 e, após isso, teremos um fatorial muito grande.
+- Certificação de chave pública é para saber qual pessoa é a verdadeira através de uma chave. E quem garante essa autenticação
+é a entidade certificadora.
+- A entidade verifica a identidade e emite certificados. Possuindo alta confiabilidade e o vínculo entre chave e entidade.
+
+* SSL
+
+- É um protocolo de segurança para conexões TCP. Possui confidencialidade, integridade e autencidade end-point.
+- Quando utilizamos o HTTPS ele, com o SSL, permite que tenha uma segurança e mantenha a segurança na conexão.
+- SSL possui 3 fases, handshake, com o TCP starts, TCP response, TCP confirmation. Após isso, tem a verificação de autenticidade
+com o SSL Hello e Certification (Possui chave pública).
+- Master Secret Key com Chave Simétrica. MS possui EA = SEK de Alice para Bob. MA = MAC de Alice para Bob. EB = SEK de Bob
+para Alice e MB = MAC de Bob para Alice.
+- HTTPS é o HTTP + SSL. Porta 443.
+- Para a transferência efetiva de dados é necessário um Record + MAC, que seria a verificação de integridade da mensagem.
+Ou seja. Data stream = Record + MAC + ... + Record + MAC
