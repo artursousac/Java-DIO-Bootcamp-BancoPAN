@@ -1,0 +1,30 @@
+## PROTOCOLO DE COMUNICAÇÃO WEBSOCKET
+
+* CONTEXTUALIZAÇÃO
+- WebSocket é via API.
+- é uma tecnologia avançada que torna possível abrir uma sessão de comunicação interativa entre o navegador do usuário e um servidor.
+Com esta API, você pode enviar mensagens para um servidor e receber respostas orientadas a eventos sem ter que consultar o servidor 
+para obter uma resposta.
+- Porta 80 e 443.
+- Roda encapsulada no HTTP.
+- Autenticação, Proxies e Filtragem.
+- Serve para aplicações de tempo real.
+
+* COMO FUNCIONA O WEBSOCKET
+- Opera com duas fases: Handshake e Data Transfer.
+- HandShake de duas vias por meio do SYN e SYN ACK, sem possuir o último ACK.
+- websocket é um Upgrade e precisa avisar ao servidor que irá utilizar.
+- Data transfer temos o protocole que fornece comunicação cliente/servidor executando código não confiável (Aplicação)
+em um ambiente controlado para o host que escolheu essa comunicação.
+- websocket é agnóstico e apenas aceita JSON.
+- Dentro do protocolo existe uma autenticação para o websocket.
+- CORS não é habilitado por default.
+- 1. Origin-base security model (restringe as páginas web). 2. Endereçamento e protocolo. 3. Camadas -> enquadramento
+on top TCP. 4. Encerramento do handshake.
+
+* COMO FUNCIONA CONEXÃO NA INTERNET
+- Proxy/HTTP Server; DNS, Socket e Load Balancer.
+- Cliente envia pacote ao DNS (Domain name server) fazendo perguntas e depois o cliente se conecta com o Apache.
+- Conexão HTTP por meio do Socket TCP.
+- Load Balancer faz a Distribuição de carga, além da Multiplexação.
+
