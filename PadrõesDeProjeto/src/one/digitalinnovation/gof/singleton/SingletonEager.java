@@ -1,4 +1,4 @@
-package one.digitalinnovation.gof;
+package one.digitalinnovation.gof.singleton;
 
 public class SingletonEager {
 	
